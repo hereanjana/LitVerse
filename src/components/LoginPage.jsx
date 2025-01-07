@@ -37,7 +37,7 @@ function LoginPage() {
               </div>
               {/* Favorite List */}
               <button className="text-gray-700 hover:text-indigo-600">
-                <span className="material-icons">favorite</span>
+                <span className="material-icons">favorite</span> 
               </button>
               {/* Login Button */}
               <a
