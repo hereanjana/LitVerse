@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+dotenv
+psycopg2-binary==2.9.10
+alembic
+svix
+pydantic
+pydantic-settings
