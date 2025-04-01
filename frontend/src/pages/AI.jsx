@@ -32,7 +32,7 @@ const AISearchPage = () => {
   return (
     <div className="min-h-screen bg-silver">
       {/* Header */}
-      <header className="bg-[#210F37] shadow-sm w-full">
+      <header className="bg-black shadow-sm w-full">
         <div className="mx-auto px-4 py-4 flex justify-between items-center w-full">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="LitVerse Logo" className="h-10 w-auto" />

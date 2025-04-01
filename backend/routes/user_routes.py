@@ -28,9 +28,8 @@ def read_users(db: Session = Depends(get_db)):
 @router.post("/users/onboarding")
 async def save_user(payload: UserOnboardingSchema, db: Session = Depends(get_db)):
     try:
-        # Extract genres and books from the payload
+        # Extract genres from the payload
         extracted_genres = payload.genres
-        extracted_books = payload.books  # Get the books from payload
 
         # Validate genres
         if not extracted_genres:
@@ -48,12 +47,6 @@ async def save_user(payload: UserOnboardingSchema, db: Session = Depends(get_db)
             if genre:
                 user.genres.append(genre)
 
-        # Add books to the user
-        for book_id in extracted_books:
-            book = db.query(Book).filter(Book.id == book_id).first()
-            if book:
-                user.books.append(book)
-
         db.commit()
 
         # Suggest books based on the selected genres
@@ -64,18 +57,7 @@ async def save_user(payload: UserOnboardingSchema, db: Session = Depends(get_db)
             "user_data": {
                 "id": user.id,
                 "selected_genres": [genre.name for genre in user.genres],
-                "selected_books": [
-                    {
-                        "id": book.id,
-                        "title": book.title,
-                        "author": book.author,
-                        "isbn": book.isbn,
-                        "publication_date": book.publication_date,
-                        "summary": book.summary,
-                        "genres": [genre.name for genre in book.genres],
-                        "cover_image_url": book.cover_image_url
-                    } for book in user.books
-                ]
+                "selected_books": [book for book in user.books]
             },
             "suggested_books": suggested_books
         }

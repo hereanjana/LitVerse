@@ -23,6 +23,14 @@ export default {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
+      'primary': "#865DFF",  
+      'primary-dark': '#6a3fd3',
+        // Purple
+      'secondary': "#FFC0CB",  // Bubblegum
+      // Silver
+      'lightBg': "#FAF9FF",    // Light purple tint
+      'darkText': "#2E2E3A",
+      
     },
     extend: {},
   },

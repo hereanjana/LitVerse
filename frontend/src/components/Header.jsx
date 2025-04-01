@@ -6,11 +6,11 @@ const Header = () => {
   const { isLoaded } = useUser();
 
   if (!isLoaded) {
-    return null; // or a loading spinner
+    return null;
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-white/5 backdrop-blur-lg z-50 border-b border-pink/10">
+    <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-4 bg-black z-50 border-b border-bubble-gum/20 shadow-md">
       {/* Logo */}
       <div className="flex items-center">
         <Link to="/">
@@ -19,14 +19,23 @@ const Header = () => {
       </div>
 
       {/* Center Navbar Links */}
-      <div className="hidden md:flex space-x-8 text-white text-lg font-semibold">
-        <Link to="/bestsellers" className="hover:text-bubble-gum transition">
+      <div className="hidden md:flex space-x-8 text-silver text-lg font-semibold">
+        <Link 
+          to="/bestsellers" 
+          className="hover:text-[#865DFF] transition-colors duration-300"
+        >
           Best Sellers
         </Link>
-        <Link to="/genres" className="hover:text-bubble-gum transition">
+        <Link 
+          to="/genres" 
+          className="hover:text-[#865DFF] transition-colors duration-300"
+        >
           Genres
         </Link>
-        <Link to="/recommendations" className="hover:text-bubble-gum transition">
+        <Link 
+          to="/recommendations" 
+          className="hover:text-[#865DFF] transition-colors duration-300"
+        >
           Recommendations
         </Link>
       </div>
@@ -35,24 +44,26 @@ const Header = () => {
       <div className="flex items-center gap-4">
         <Link
           to="/ai-search"
-          className="relative overflow-hidden group transition-transform duration-200 hover:scale-105"
+          className="relative group"
         >
-          <span className="relative z-10 block px-4 py-2 font-medium text-white rounded-lg bg-[#865DFF] hover:bg-[#6a3fd3] text-white">
+          <span className="relative z-10 block px-4 py-2 font-medium text-white rounded-lg bg-primary hover:bg-primary-dark transition-colors duration-300 shadow-lg">
             AI Search
           </span>
           <span
-            className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"
+            className="absolute inset-0 bg-bubble-gum/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg -m-1"
             aria-hidden="true"
           ></span>
         </Link>
-        {/* User Button from Clerk */}
+        
         <SignedIn>
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-10 h-10 border-2 border-white shadow-lg",
-                userButtonPopoverCard: "bg-gray-800 text-white",
-                userButtonPopoverActionButton: "hover:bg-gray-700",
+                avatarBox: "w-10 h-10 border-2 border-bubble-gum shadow-lg hover:border-primary",
+                userButtonPopoverCard: "bg-indigo-900 text-silver border border-primary",
+                userButtonPopoverActionButton: "hover:bg-primary/20 text-silver",
+                userButtonPopoverActionButtonText: "text-silver",
+                userButtonPopoverFooter: "bg-indigo-950",
               },
             }}
           />

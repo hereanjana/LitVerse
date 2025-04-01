@@ -1,11 +1,12 @@
 import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import cover from "../assets/cover.png";
 import c2 from "../assets/c2.png";
 import c3 from "../assets/c3.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 const LandingPage = () => {
   const { isLoaded } = useUser();
@@ -13,6 +14,32 @@ const LandingPage = () => {
   if (!isLoaded) {
     return <div>Loading.....</div>;
   }
+  
+  const [query, setQuery] = useState("")
+const navigate = useNavigate()
+  const handleSearch = (e) => {
+    if (!query.trim()) return;
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+  };
+
+  // const [results,setResults] = useState([])
+  // const [showModal, setShowModal] = useState(false)
+
+
+  // const searchBooks = async () => {
+  //   if (!query.trim()) return;
+
+  //   try {
+  //     const response = await axios.get(
+  //       `https://openlibrary.org/search.json?q=${query}&limit=10`
+  //     );
+  //     setResults(response.data.docs);
+  //     setShowModal(true);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+
 
   return (
     <div className="relative">
@@ -44,7 +71,7 @@ const LandingPage = () => {
           </h1>
 
           {/* Search Bar */}
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <div className="relative w-full max-w-2xl">
               <input
                 type="text"
@@ -68,7 +95,38 @@ const LandingPage = () => {
                 </svg>
               </button>
             </div>
-          </div>
+          </div> */}
+            <div className="flex justify-center">
+      <div className="relative w-full max-w-2xl">
+        <input
+          type="text"
+          placeholder="Search for books, genres, or authors..."
+          className="w-full px-6 py-4 pr-16 text-lg bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-bubble-gum/50 focus:border-transparent transition-all duration-200"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+        />
+        <button
+          onClick={handleSearch}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-bubble-gum to-pink-500 text-white p-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
         </div>
       </div>
 

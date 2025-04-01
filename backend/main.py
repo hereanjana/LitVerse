@@ -1,17 +1,10 @@
 from fastapi import FastAPI
-from models.base import Base
-from models.user import User
-from models.onboarded_user import Onboarded_User
-from models.book import Book
-from routes import webhooks  # Import your routes
-from routes.user_routes import router as user_router
-import uvicorn
+from routes import user_test_routes
 
 app = FastAPI()
 
-# Include your routes
-app.include_router(webhooks.router)
-app.include_router(user_router)
+# Only include the test routes
+app.include_router(user_test_routes.router)
 
 @app.get("/")
 def read_root():

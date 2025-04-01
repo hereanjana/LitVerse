@@ -36,7 +36,7 @@ const BooklistPage = () => {
   return (
     <div className="min-h-screen bg-silver">
       {/* Header with User */}
-      <header className="bg-[#210F37] shadow-sm">
+      <header className="bg-black shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center">
             <img src={logo} alt="LitVerse Logo" className="h-12 w-auto" />
