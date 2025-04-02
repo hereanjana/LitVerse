@@ -1,7 +1,7 @@
 from typing import List, Dict
 from sqlalchemy.orm import Session
-from models.book import Book
-from models.onboarded_user import Onboarded_User
+# from models.book import Book
+# from models.onboarded_user import Onboarded_User
 
 def hybrid_recommendation(db: Session, user_id: int) -> List[Dict]:
     # Get the user's selected genres

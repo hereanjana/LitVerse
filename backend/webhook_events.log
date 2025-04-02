@@ -1,0 +1,2248 @@
+2025-04-01 22:26:20,784 - INFO - Received webhook request with headers: {'host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'user-agent': 'Svix-Webhooks/1.62.0', 'content-length': '1779', 'accept': '*/*', 'content-type': 'application/json', 'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-signature': 'v1,lhHtHstU0B50AldyJfVvJZUa9LaQoNLucRgpPm1opNI=', 'svix-timestamp': '1743525680', 'x-forwarded-for': '63.33.109.123', 'x-forwarded-host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'x-forwarded-proto': 'https', 'accept-encoding': 'gzip'}
+2025-04-01 22:26:20,786 - ERROR - Unhandled exception in webhook handler: name 'log_webhook_event' is not defined
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 74, in handle_webhook
+    event_data: Dict[str, Any] = wh.verify(
+                                 ^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 86, in handle_webhook
+    log_webhook_event("verification_failed", {}, "error", error_msg)
+    ^^^^^^^^^^^^^^^^^
+NameError: name 'log_webhook_event' is not defined
+2025-04-01 22:28:31,608 - INFO - Received webhook request with headers: {'host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'user-agent': 'Svix-Webhooks/1.62.0', 'content-length': '1779', 'accept': '*/*', 'content-type': 'application/json', 'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-signature': 'v1,KxdQHal8OwlGLoLhP3raEgM4OBF/59faUoWLtxMKrPE=', 'svix-timestamp': '1743525811', 'x-forwarded-for': '52.215.16.239', 'x-forwarded-host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'x-forwarded-proto': 'https', 'accept-encoding': 'gzip'}
+2025-04-01 22:28:31,609 - INFO - {
+  "timestamp": "2025-04-01T16:43:31.609871",
+  "event_type": "verification_failed",
+  "status": "error",
+  "data": {},
+  "error": "Webhook verification failed: No matching signature found"
+}
+2025-04-01 22:28:31,610 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 91, in handle_webhook
+    event_data: Dict[str, Any] = wh.verify(
+                                 ^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 104, in handle_webhook
+    raise HTTPException(status_code=400, detail=error_msg)
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:31:08,623 - DEBUG - Webhook received - ID: msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh, Timestamp: 1743525968
+2025-04-01 22:31:08,623 - DEBUG - Headers: {'host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'user-agent': 'Svix-Webhooks/1.62.0', 'content-length': '1779', 'accept': '*/*', 'content-type': 'application/json', 'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-signature': 'v1,A72sHSp3eMyrAscu7HhXv4Ff78R64Zvgx99k0jEUqSY=', 'svix-timestamp': '1743525968', 'x-forwarded-for': '63.33.109.123', 'x-forwarded-host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'x-forwarded-proto': 'https', 'accept-encoding': 'gzip'}
+2025-04-01 22:31:08,623 - DEBUG - Attempting to verify webhook with headers: {'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-timestamp': '1743525968', 'svix-signature': 'v1,A72sHSp3eMyrAscu7HhXv4Ff78R64Zvgx99k0jEUqSY='}
+2025-04-01 22:31:08,624 - INFO - {
+  "timestamp": "2025-04-01T16:46:08.623910",
+  "event_type": "verification_failed",
+  "status": "error",
+  "data": {
+    "svix_id": "msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh",
+    "svix_timestamp": "1743525968"
+  },
+  "error": "Webhook verification failed: No matching signature found"
+}
+2025-04-01 22:31:08,624 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 113, in handle_webhook
+    event_data = wh.verify(payload_str, svix_headers)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 122, in handle_webhook
+    raise HTTPException(status_code=400, detail=error_msg)
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:32:31,604 - DEBUG - Webhook received - ID: msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh, Timestamp: 1743526051
+2025-04-01 22:32:31,604 - DEBUG - Headers: {'host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'user-agent': 'Svix-Webhooks/1.62.0', 'content-length': '1779', 'accept': '*/*', 'content-type': 'application/json', 'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-signature': 'v1,w5MiQiFwSSEZkxzzNuzwNgHiOTpIcUBZnZ3ZyYNdzPA=', 'svix-timestamp': '1743526051', 'x-forwarded-for': '63.33.109.123', 'x-forwarded-host': 'f966-2404-7c00-43-8e44-dd77-2de6-84cb-5a4f.ngrok-free.app', 'x-forwarded-proto': 'https', 'accept-encoding': 'gzip'}
+2025-04-01 22:32:31,604 - DEBUG - Attempting to verify webhook with headers: {'svix-id': 'msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh', 'svix-timestamp': '1743526051', 'svix-signature': 'v1,w5MiQiFwSSEZkxzzNuzwNgHiOTpIcUBZnZ3ZyYNdzPA='}
+2025-04-01 22:32:31,608 - INFO - {
+  "timestamp": "2025-04-01T16:47:31.608204",
+  "event_type": "verification_failed",
+  "status": "error",
+  "data": {
+    "svix_id": "msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh",
+    "svix_timestamp": "1743526051"
+  },
+  "error": "Webhook verification failed: No matching signature found"
+}
+2025-04-01 22:32:31,608 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 113, in handle_webhook
+    event_data = wh.verify(payload_str, svix_headers)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 122, in handle_webhook
+    raise HTTPException(status_code=400, detail=error_msg)
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:35:22,472 - DEBUG - Raw payload received: {"data":{"backup_code_enabled":false,"banned":false,"create_organization_enabled":true,"created_at":1743524724425,"delete_self_enabled":true,"email_addresses":[{"created_at":1743524693311,"email_address":"pakhrinanjana156@gmail.com","id":"idn_2v8RPuH0qtRhY6nPWJ1D30EIvZK","linked_to":[],"matches_sso_connection":false,"object":"email_address","reserved":false,"updated_at":1743524724431,"verification":{"attempts":1,"expire_at":1743525294003,"status":"verified","strategy":"email_code"}}],"enterprise_accounts":[],"external_accounts":[],"external_id":null,"first_name":null,"has_image":false,"id":"user_2v8RTnp4dmX82haC1twwgdfdO4p","image_url":"https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OFJUbnA0ZG1YODJoYUMxdHd3Z2RmZE80cCJ9","last_active_at":1743524724424,"last_name":null,"last_sign_in_at":null,"legal_accepted_at":null,"locked":false,"lockout_expires_in_seconds":null,"mfa_disabled_at":null,"mfa_enabled_at":null,"object":"user","passkeys":[],"password_enabled":true,"phone_numbers":[],"primary_email_address_id":"idn_2v8RPuH0qtRhY6nPWJ1D30EIvZK","primary_phone_number_id":null,"primary_web3_wallet_id":null,"private_metadata":{},"profile_image_url":"https://www.gravatar.com/avatar?d=mp","public_metadata":{},"saml_accounts":[],"totp_enabled":false,"two_factor_enabled":false,"unsafe_metadata":{},"updated_at":1743524724443,"username":null,"verification_attempts_remaining":100,"web3_wallets":[]},"event_attributes":{"http_request":{"client_ip":"2404:7c00:43:8e44:dd77:2de6:84cb:5a4f","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:136.0) Gecko/20100101 Firefox/136.0"}},"instance_id":"ins_2tFlM1ljqLMGJ6HiWpBJXGF6o8K","object":"event","timestamp":1743524724459,"type":"user.created"}
+2025-04-01 22:35:22,473 - DEBUG - Webhook secret being used: whse...
+2025-04-01 22:35:22,473 - DEBUG - Svix headers received - ID: msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh, Timestamp: 1743526222, Signature: v1,k8Po6V5+GgW/A9jPMFY0PNXhSYnfKXQfnGYyFQGx7Es=
+2025-04-01 22:35:22,474 - ERROR - Verification failed - Secret used: whse...
+2025-04-01 22:35:22,474 - ERROR - Full error: No matching signature found
+2025-04-01 22:35:22,474 - INFO - {
+  "timestamp": "2025-04-01T16:50:22.474193",
+  "event_type": "verification_failed",
+  "status": "error",
+  "data": {
+    "svix_id": "msg_2v8RU0mgMZQjl9AbYiEJmLWQoVh",
+    "svix_timestamp": "1743526222",
+    "payload_preview": "{\"data\":{\"backup_code_enabled\":false,\"banned\":false,\"create_organization_enabled\":true,\"created_at\":"
+  },
+  "error": "Webhook verification failed: No matching signature found"
+}
+2025-04-01 22:35:22,474 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 111, in handle_webhook
+    event_data = wh.verify(payload, svix_headers)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 123, in handle_webhook
+    raise HTTPException(status_code=400, detail=error_msg)
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:47:51,637 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 89, in handle_webhook
+    event_data: Dict[str, Any] = wh.verify(
+                                 ^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 99, in handle_webhook
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:49:25,476 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 89, in handle_webhook
+    event_data: Dict[str, Any] = wh.verify(
+                                 ^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 99, in handle_webhook
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 22:54:14,066 - DEBUG - Using selector: KqueueSelector
+2025-04-01 22:54:32,661 - ERROR - Unhandled exception in webhook handler: 400: Webhook verification failed: No matching signature found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 89, in handle_webhook
+    event_data: Dict[str, Any] = wh.verify(
+                                 ^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/svix/webhooks.py", line 61, in verify
+    raise WebhookVerificationError("No matching signature found")
+svix.webhooks.WebhookVerificationError: No matching signature found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 99, in handle_webhook
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Webhook verification failed: No matching signature found
+2025-04-01 23:02:42,319 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:02:43,534 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:02:48,481 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:02:53,189 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:02:54,600 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:08:07,325 - INFO - Processing event type: user.created
+2025-04-01 23:08:07,341 - INFO - {
+  "timestamp": "2025-04-01T17:23:07.341769",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "birthday": "",
+    "created_at": 1654012591514,
+    "email_addresses": [
+      {
+        "email_address": "example@example.org",
+        "id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+        "linked_to": [],
+        "object": "email_address",
+        "verification": {
+          "status": "verified",
+          "strategy": "ticket"
+        }
+      }
+    ],
+    "external_accounts": [],
+    "external_id": "567772",
+    "first_name": "Example",
+    "gender": "",
+    "id": "user_29w83sxmDNGwOuEthce5gg56FcC",
+    "image_url": "https://img.clerk.com/xxxxxx",
+    "last_name": "Example",
+    "last_sign_in_at": 1654012591514,
+    "object": "user",
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1654012591835,
+    "username": null,
+    "web3_wallets": []
+  },
+  "error": "Mapper 'Mapper[Genre(genres)]' has no property 'onboarded_users'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called."
+}
+2025-04-01 23:08:07,342 - ERROR - Unhandled exception in webhook handler: Mapper 'Mapper[Genre(genres)]' has no property 'onboarded_users'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2522, in get_property
+    return self._props[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'onboarded_users'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 148, in handle_webhook
+    existing_user = user_crud.get_by_clerk_id(db, clerk_id=user_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/crud/user.py", line 10, in get_by_clerk_id
+    return db.query(User).filter(User.clerk_id == clerk_id).first()
+           ^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2955, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/sql/coercions.py", line 388, in expect
+    insp._post_inspect
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2724, in _post_inspect
+    self._check_configure()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2401, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 4213, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 4254, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2418, in _post_configure_properties
+    prop.init()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/interfaces.py", line 589, in init
+    self.do_init()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/relationships.py", line 1661, in do_init
+    self._generate_backref()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/relationships.py", line 2147, in _generate_backref
+    self._add_reverse_property(self.back_populates)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/relationships.py", line 1592, in _add_reverse_property
+    other = self.mapper.get_property(key, _configure_mappers=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/mapper.py", line 2524, in get_property
+    raise sa_exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Mapper 'Mapper[Genre(genres)]' has no property 'onboarded_users'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2025-04-01 23:09:27,155 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:09:32,701 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:09:52,741 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:09:56,112 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:17:05,039 - INFO - Processing event type: user.created
+2025-04-01 23:17:05,063 - INFO - {
+  "timestamp": "2025-04-01T17:32:05.063248",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "birthday": "",
+    "created_at": 1654012591514,
+    "email_addresses": [
+      {
+        "email_address": "example@example.org",
+        "id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+        "linked_to": [],
+        "object": "email_address",
+        "verification": {
+          "status": "verified",
+          "strategy": "ticket"
+        }
+      }
+    ],
+    "external_accounts": [],
+    "external_id": "567772",
+    "first_name": "Example",
+    "gender": "",
+    "id": "user_29w83sxmDNGwOuEthce5gg56FcC",
+    "image_url": "https://img.clerk.com/xxxxxx",
+    "last_name": "Example",
+    "last_sign_in_at": 1654012591514,
+    "object": "user",
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1654012591835,
+    "username": null,
+    "web3_wallets": []
+  },
+  "error": "User already exists: user_29w83sxmDNGwOuEthce5gg56FcC"
+}
+2025-04-01 23:17:05,063 - INFO - {
+  "timestamp": "2025-04-01T17:32:05.063482",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "birthday": "",
+    "created_at": 1654012591514,
+    "email_addresses": [
+      {
+        "email_address": "example@example.org",
+        "id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+        "linked_to": [],
+        "object": "email_address",
+        "verification": {
+          "status": "verified",
+          "strategy": "ticket"
+        }
+      }
+    ],
+    "external_accounts": [],
+    "external_id": "567772",
+    "first_name": "Example",
+    "gender": "",
+    "id": "user_29w83sxmDNGwOuEthce5gg56FcC",
+    "image_url": "https://img.clerk.com/xxxxxx",
+    "last_name": "Example",
+    "last_sign_in_at": 1654012591514,
+    "object": "user",
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_29w83yL7CwVlJXylYLxcslromF1",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1654012591835,
+    "username": null,
+    "web3_wallets": []
+  },
+  "error": "400: User already exists"
+}
+2025-04-01 23:17:05,063 - ERROR - Unhandled exception in webhook handler: 400: User already exists
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 152, in handle_webhook
+    raise HTTPException(status_code=400, detail="User already exists")
+fastapi.exceptions.HTTPException: 400: User already exists
+2025-04-01 23:18:01,282 - INFO - Processing event type: user.deleted
+2025-04-01 23:18:01,288 - INFO - {
+  "timestamp": "2025-04-01T17:33:01.288766",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-01 23:18:01,289 - INFO - {
+  "timestamp": "2025-04-01T17:33:01.288983",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:18:01,289 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:18:06,818 - INFO - Processing event type: user.deleted
+2025-04-01 23:18:06,836 - INFO - {
+  "timestamp": "2025-04-01T17:33:06.836575",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-01 23:18:06,837 - INFO - {
+  "timestamp": "2025-04-01T17:33:06.836954",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:18:06,837 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:20:15,221 - INFO - Processing event type: email.created
+2025-04-01 23:20:15,222 - WARNING - Unhandled event type: email.created
+2025-04-01 23:20:15,223 - INFO - {
+  "timestamp": "2025-04-01T17:35:15.222921",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>484226 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>484226</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP</b> at <b>01 April 2025, 17:35 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "484226 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 01 April 2025, 17:35 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "484226",
+      "requested_at": "01 April 2025, 17:35 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": null,
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2v8ZyAOMXLCtZ2tTvP7izZGp3Vg",
+    "from_email_name": "notifications",
+    "id": "ema_2v8ZyJKqBzFtnbHeXTdQX1Uauy9",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 484226 is your verification code",
+    "to_email_address": "pakhrinanjana56@gmail.com",
+    "user_id": null
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:21:13,731 - INFO - Processing event type: email.created
+2025-04-01 23:21:13,733 - WARNING - Unhandled event type: email.created
+2025-04-01 23:21:13,734 - INFO - {
+  "timestamp": "2025-04-01T17:36:13.733589",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>936160 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>936160</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP</b> at <b>01 April 2025, 17:36 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "936160 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 01 April 2025, 17:36 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "936160",
+      "requested_at": "01 April 2025, 17:36 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": null,
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2v8ZyAOMXLCtZ2tTvP7izZGp3Vg",
+    "from_email_name": "notifications",
+    "id": "ema_2v8a5lmtwTDtC6lTWSbshnSSrna",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 936160 is your verification code",
+    "to_email_address": "pakhrinanjana56@gmail.com",
+    "user_id": null
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:22:04,727 - INFO - Processing event type: email.created
+2025-04-01 23:22:04,728 - WARNING - Unhandled event type: email.created
+2025-04-01 23:22:04,728 - INFO - {
+  "timestamp": "2025-04-01T17:37:04.728120",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>133703 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>133703</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP</b> at <b>01 April 2025, 17:37 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "133703 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 01 April 2025, 17:37 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "133703",
+      "requested_at": "01 April 2025, 17:37 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": null,
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "from_email_name": "notifications",
+    "id": "ema_2v8aC9AJ6tMyOA661DCxkpq3oK2",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 133703 is your verification code",
+    "to_email_address": "pakhrinanjana156@gmail.com",
+    "user_id": null
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:22:20,461 - INFO - Processing event type: session.created
+2025-04-01 23:22:20,461 - WARNING - Unhandled event type: session.created
+2025-04-01 23:22:20,462 - INFO - {
+  "timestamp": "2025-04-01T17:37:20.462035",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121040067,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529040067,
+    "expire_at": 1744133840067,
+    "id": "sess_2v8aE7wtZHEuPx49DIRF4fxkNpp",
+    "last_active_at": 1743529040067,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743529040104,
+    "user_id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:22:20,632 - INFO - Processing event type: user.created
+2025-04-01 23:22:20,644 - INFO - {
+  "timestamp": "2025-04-01T17:37:20.644034",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1743529040057,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1743529023526,
+        "email_address": "pakhrinanjana156@gmail.com",
+        "id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+        "linked_to": [],
+        "matches_sso_connection": false,
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1743529040061,
+        "verification": {
+          "attempts": 1,
+          "expire_at": 1743529624253,
+          "status": "verified",
+          "strategy": "email_code"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [],
+    "external_id": null,
+    "first_name": null,
+    "has_image": false,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OGFFRU1YWDN4VjNRcXJsNmpBVTRoYzNWbiJ9",
+    "last_active_at": 1743529040056,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1743529040077,
+    "username": null,
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "error": "2 validation errors for UserCreate\nfirst_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type\nlast_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type"
+}
+2025-04-01 23:22:20,644 - ERROR - Unhandled exception in webhook handler: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 138, in handle_webhook
+    user_in = UserCreate(
+              ^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-04-01 23:22:26,192 - INFO - Processing event type: user.created
+2025-04-01 23:22:26,193 - INFO - {
+  "timestamp": "2025-04-01T17:37:26.193687",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1743529040057,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1743529023526,
+        "email_address": "pakhrinanjana156@gmail.com",
+        "id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+        "linked_to": [],
+        "matches_sso_connection": false,
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1743529040061,
+        "verification": {
+          "attempts": 1,
+          "expire_at": 1743529624253,
+          "status": "verified",
+          "strategy": "email_code"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [],
+    "external_id": null,
+    "first_name": null,
+    "has_image": false,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OGFFRU1YWDN4VjNRcXJsNmpBVTRoYzNWbiJ9",
+    "last_active_at": 1743529040056,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1743529040077,
+    "username": null,
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "error": "2 validation errors for UserCreate\nfirst_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type\nlast_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type"
+}
+2025-04-01 23:22:26,194 - ERROR - Unhandled exception in webhook handler: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 138, in handle_webhook
+    user_in = UserCreate(
+              ^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-04-01 23:22:33,406 - INFO - Processing event type: user.deleted
+2025-04-01 23:22:33,907 - INFO - {
+  "timestamp": "2025-04-01T17:37:33.906879",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-01 23:22:33,908 - INFO - {
+  "timestamp": "2025-04-01T17:37:33.908056",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:22:33,908 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:25:47,814 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:26:30,199 - INFO - Processing event type: session.removed
+2025-04-01 23:26:30,199 - WARNING - Unhandled event type: session.removed
+2025-04-01 23:26:30,199 - INFO - {
+  "timestamp": "2025-04-01T17:41:30.199583",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121040067,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529040067,
+    "expire_at": 1744133840067,
+    "id": "sess_2v8aE7wtZHEuPx49DIRF4fxkNpp",
+    "last_active_at": 1743529286769,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743529289634,
+    "user_id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:26:42,196 - INFO - Processing event type: user.deleted
+2025-04-01 23:26:42,238 - INFO - {
+  "timestamp": "2025-04-01T17:41:42.238479",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-01 23:26:42,238 - INFO - {
+  "timestamp": "2025-04-01T17:41:42.238838",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:26:42,238 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:26:47,786 - INFO - Processing event type: user.deleted
+2025-04-01 23:26:47,788 - INFO - {
+  "timestamp": "2025-04-01T17:41:47.788577",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-01 23:26:47,788 - INFO - {
+  "timestamp": "2025-04-01T17:41:47.788704",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:26:47,788 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:26:50,481 - INFO - Processing event type: user.deleted
+2025-04-01 23:26:50,501 - INFO - {
+  "timestamp": "2025-04-01T17:41:50.500871",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-01 23:26:50,503 - INFO - {
+  "timestamp": "2025-04-01T17:41:50.503346",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:26:50,503 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:26:54,925 - INFO - Processing event type: user.deleted
+2025-04-01 23:26:54,927 - INFO - {
+  "timestamp": "2025-04-01T17:41:54.927420",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-01 23:26:54,927 - INFO - {
+  "timestamp": "2025-04-01T17:41:54.927584",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:26:54,927 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:26:59,046 - INFO - Processing event type: user.deleted
+2025-04-01 23:26:59,061 - INFO - {
+  "timestamp": "2025-04-01T17:41:59.061209",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "User not found: user_2uqC5seudvTkfQ2dMCuaT7BIR1a"
+}
+2025-04-01 23:26:59,061 - INFO - {
+  "timestamp": "2025-04-01T17:41:59.061396",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:26:59,061 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:27:04,630 - INFO - Processing event type: user.deleted
+2025-04-01 23:27:04,646 - INFO - {
+  "timestamp": "2025-04-01T17:42:04.646082",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "User not found: user_2uqC5seudvTkfQ2dMCuaT7BIR1a"
+}
+2025-04-01 23:27:04,646 - INFO - {
+  "timestamp": "2025-04-01T17:42:04.646215",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:27:04,646 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:27:26,671 - INFO - Processing event type: user.created
+2025-04-01 23:27:26,712 - INFO - {
+  "timestamp": "2025-04-01T17:42:26.711968",
+  "event_type": "user.created",
+  "status": "success",
+  "data": {
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy",
+    "email": "pakhrinanjana156@gmail.com",
+    "username": null
+  }
+}
+2025-04-01 23:27:26,731 - INFO - Processing event type: session.created
+2025-04-01 23:27:26,731 - WARNING - Unhandled event type: session.created
+2025-04-01 23:27:26,731 - INFO - {
+  "timestamp": "2025-04-01T17:42:26.731303",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121346175,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529346175,
+    "expire_at": 1744134146175,
+    "id": "sess_2v8aqZcVCAt9u47KBTc0sIK6k5j",
+    "last_active_at": 1743529346175,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743529346266,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:27:43,594 - INFO - Processing event type: user.created
+2025-04-01 23:27:43,599 - INFO - {
+  "timestamp": "2025-04-01T17:42:43.599015",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1743529040057,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1743529023526,
+        "email_address": "pakhrinanjana156@gmail.com",
+        "id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+        "linked_to": [],
+        "matches_sso_connection": false,
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1743529040061,
+        "verification": {
+          "attempts": 1,
+          "expire_at": 1743529624253,
+          "status": "verified",
+          "strategy": "email_code"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [],
+    "external_id": null,
+    "first_name": null,
+    "has_image": false,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OGFFRU1YWDN4VjNRcXJsNmpBVTRoYzNWbiJ9",
+    "last_active_at": 1743529040056,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1743529040077,
+    "username": null,
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "error": "2 validation errors for UserCreate\nfirst_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type\nlast_name\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.10/v/string_type"
+}
+2025-04-01 23:27:43,599 - ERROR - Unhandled exception in webhook handler: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 138, in handle_webhook
+    user_in = UserCreate(
+              ^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for UserCreate
+first_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-04-01 23:28:55,956 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:04,571 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:08,491 - INFO - Processing event type: user.deleted
+2025-04-01 23:31:08,527 - INFO - {
+  "timestamp": "2025-04-01T17:46:08.527022",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-01 23:31:08,527 - INFO - {
+  "timestamp": "2025-04-01T17:46:08.527239",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:31:08,527 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:31:09,796 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:15,665 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:17,097 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:24,666 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:26,672 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:31:54,236 - INFO - Processing event type: user.deleted
+2025-04-01 23:31:54,261 - INFO - {
+  "timestamp": "2025-04-01T17:46:54.261775",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-01 23:31:54,261 - INFO - {
+  "timestamp": "2025-04-01T17:46:54.261955",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:31:54,262 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:32:54,680 - INFO - Processing event type: user.created
+2025-04-01 23:32:54,776 - INFO - {
+  "timestamp": "2025-04-01T17:47:54.776494",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1743529040057,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1743529023526,
+        "email_address": "pakhrinanjana156@gmail.com",
+        "id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+        "linked_to": [],
+        "matches_sso_connection": false,
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1743529040061,
+        "verification": {
+          "attempts": 1,
+          "expire_at": 1743529624253,
+          "status": "verified",
+          "strategy": "email_code"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [],
+    "external_id": null,
+    "first_name": null,
+    "has_image": false,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OGFFRU1YWDN4VjNRcXJsNmpBVTRoYzNWbiJ9",
+    "last_active_at": 1743529040056,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1743529040077,
+    "username": null,
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "error": "(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint \"ix_users_email\"\nDETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.\n\n[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]\n[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)"
+}
+2025-04-01 23:32:54,776 - ERROR - Unhandled exception in webhook handler: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]
+[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 155, in handle_webhook
+    user_crud.create(db, obj_in=user_in)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/crud/base.py", line 29, in create
+    db.commit()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]
+[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-01 23:32:59,205 - INFO - Processing event type: user.deleted
+2025-04-01 23:32:59,210 - INFO - {
+  "timestamp": "2025-04-01T17:47:59.210000",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "User not found: user_2uqC5seudvTkfQ2dMCuaT7BIR1a"
+}
+2025-04-01 23:32:59,210 - INFO - {
+  "timestamp": "2025-04-01T17:47:59.210167",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:32:59,210 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-01 23:33:38,486 - INFO - Processing event type: user.created
+2025-04-01 23:33:38,512 - INFO - {
+  "timestamp": "2025-04-01T17:48:38.511829",
+  "event_type": "user.created",
+  "status": "error",
+  "data": {
+    "backup_code_enabled": false,
+    "banned": false,
+    "create_organization_enabled": true,
+    "created_at": 1743529040057,
+    "delete_self_enabled": true,
+    "email_addresses": [
+      {
+        "created_at": 1743529023526,
+        "email_address": "pakhrinanjana156@gmail.com",
+        "id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+        "linked_to": [],
+        "matches_sso_connection": false,
+        "object": "email_address",
+        "reserved": false,
+        "updated_at": 1743529040061,
+        "verification": {
+          "attempts": 1,
+          "expire_at": 1743529624253,
+          "status": "verified",
+          "strategy": "email_code"
+        }
+      }
+    ],
+    "enterprise_accounts": [],
+    "external_accounts": [],
+    "external_id": null,
+    "first_name": null,
+    "has_image": false,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "image_url": "https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ydEZsTTFsanFMTUdKNkhpV3BCSlhHRjZvOEsiLCJyaWQiOiJ1c2VyXzJ2OGFFRU1YWDN4VjNRcXJsNmpBVTRoYzNWbiJ9",
+    "last_active_at": 1743529040056,
+    "last_name": null,
+    "last_sign_in_at": null,
+    "legal_accepted_at": null,
+    "locked": false,
+    "lockout_expires_in_seconds": null,
+    "mfa_disabled_at": null,
+    "mfa_enabled_at": null,
+    "object": "user",
+    "passkeys": [],
+    "password_enabled": true,
+    "phone_numbers": [],
+    "primary_email_address_id": "idn_2v8aC48G8K3VAAER2XwXpatlPoZ",
+    "primary_phone_number_id": null,
+    "primary_web3_wallet_id": null,
+    "private_metadata": {},
+    "profile_image_url": "https://www.gravatar.com/avatar?d=mp",
+    "public_metadata": {},
+    "saml_accounts": [],
+    "totp_enabled": false,
+    "two_factor_enabled": false,
+    "unsafe_metadata": {},
+    "updated_at": 1743529040077,
+    "username": null,
+    "verification_attempts_remaining": 100,
+    "web3_wallets": []
+  },
+  "error": "(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint \"ix_users_email\"\nDETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.\n\n[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]\n[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)"
+}
+2025-04-01 23:33:38,512 - ERROR - Unhandled exception in webhook handler: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]
+[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 155, in handle_webhook
+    user_crud.create(db, obj_in=user_in)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/crud/base.py", line 29, in create
+    db.commit()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/venv/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_users_email"
+DETAIL:  Key (email)=(pakhrinanjana156@gmail.com) already exists.
+
+[SQL: INSERT INTO users (clerk_id, email, first_name, last_name, profile_image_url, username, is_active, onboarded) VALUES (%(clerk_id)s, %(email)s, %(first_name)s, %(last_name)s, %(profile_image_url)s, %(username)s, %(is_active)s, %(onboarded)s) RETURNING users.id]
+[parameters: {'clerk_id': 'user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn', 'email': 'pakhrinanjana156@gmail.com', 'first_name': None, 'last_name': None, 'profile_image_url': 'https://www.gravatar.com/avatar?d=mp', 'username': None, 'is_active': True, 'onboarded': False}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-01 23:34:27,588 - INFO - Processing event type: session.removed
+2025-04-01 23:34:27,588 - WARNING - Unhandled event type: session.removed
+2025-04-01 23:34:27,588 - INFO - {
+  "timestamp": "2025-04-01T17:49:27.588710",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121346175,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529346175,
+    "expire_at": 1744134146175,
+    "id": "sess_2v8aqZcVCAt9u47KBTc0sIK6k5j",
+    "last_active_at": 1743529759670,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743529767132,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:35:41,410 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:36:52,251 - INFO - Processing event type: email.created
+2025-04-01 23:36:52,251 - WARNING - Unhandled event type: email.created
+2025-04-01 23:36:52,252 - INFO - {
+  "timestamp": "2025-04-01T17:51:52.252003",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>990845 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>990845</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP</b> at <b>01 April 2025, 17:51 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "990845 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 01 April 2025, 17:51 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "990845",
+      "requested_at": "01 April 2025, 17:51 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2404:7c00:43:8e44:dd77:2de6:84cb:5a4f, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": null,
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2v8bzdKh8WcORp4u6tISGJ6IIUy",
+    "from_email_name": "notifications",
+    "id": "ema_2v8bzdYFIm22kMbUafRGExFdYZT",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 990845 is your verification code",
+    "to_email_address": "uzumakiprajal@gmail.com",
+    "user_id": null
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:37:04,837 - INFO - Processing event type: user.created
+2025-04-01 23:37:04,908 - INFO - {
+  "timestamp": "2025-04-01T17:52:04.908418",
+  "event_type": "user.created",
+  "status": "success",
+  "data": {
+    "user_id": "user_2v8c1EUlDp6OTQ9Wa6YE4nLpmgB",
+    "email": "uzumakiprajal@gmail.com",
+    "username": null
+  }
+}
+2025-04-01 23:37:05,096 - INFO - Processing event type: session.created
+2025-04-01 23:37:05,096 - WARNING - Unhandled event type: session.created
+2025-04-01 23:37:05,096 - INFO - {
+  "timestamp": "2025-04-01T17:52:05.096675",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121924487,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529924487,
+    "expire_at": 1744134724487,
+    "id": "sess_2v8c1F0VoEciyaKEsfseNaR2wme",
+    "last_active_at": 1743529924487,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743529924528,
+    "user_id": "user_2v8c1EUlDp6OTQ9Wa6YE4nLpmgB"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-01 23:40:41,609 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:40:45,663 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:40:46,594 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:40:54,473 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:21,670 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:29,472 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:40,927 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:48,990 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:52,352 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:41:55,821 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:42:46,358 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:42:52,512 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:42:56,783 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:43:00,983 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:43:02,272 - DEBUG - Using selector: KqueueSelector
+2025-04-01 23:56:51,740 - INFO - Processing event type: user.deleted
+2025-04-01 23:56:51,796 - INFO - {
+  "timestamp": "2025-04-01T18:11:51.796884",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-01 23:56:51,797 - INFO - {
+  "timestamp": "2025-04-01T18:11:51.797059",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-01 23:56:51,797 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 00:00:29,547 - INFO - Processing event type: user.deleted
+2025-04-02 00:00:29,596 - INFO - {
+  "timestamp": "2025-04-01T18:15:29.596185",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-02 00:00:29,596 - INFO - {
+  "timestamp": "2025-04-01T18:15:29.596842",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 00:00:29,596 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 00:05:17,930 - INFO - Processing event type: user.deleted
+2025-04-02 00:05:17,988 - INFO - {
+  "timestamp": "2025-04-01T18:20:17.988377",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "User not found: user_2uqC5seudvTkfQ2dMCuaT7BIR1a"
+}
+2025-04-02 00:05:17,988 - INFO - {
+  "timestamp": "2025-04-01T18:20:17.988761",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 00:05:17,988 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 00:07:40,518 - INFO - Processing event type: user.deleted
+2025-04-02 00:07:40,876 - INFO - {
+  "timestamp": "2025-04-01T18:22:40.876178",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-02 00:07:40,877 - INFO - {
+  "timestamp": "2025-04-01T18:22:40.877148",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 00:07:40,877 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 01:41:25,526 - INFO - Processing event type: user.deleted
+2025-04-02 01:41:25,610 - INFO - {
+  "timestamp": "2025-04-01T19:56:25.610652",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-02 01:41:25,611 - INFO - {
+  "timestamp": "2025-04-01T19:56:25.611828",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 01:41:25,611 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 01:43:51,541 - INFO - Processing event type: user.deleted
+2025-04-02 01:43:51,577 - INFO - {
+  "timestamp": "2025-04-01T19:58:51.577589",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-02 01:43:51,577 - INFO - {
+  "timestamp": "2025-04-01T19:58:51.577872",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 01:43:51,578 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 01:51:55,514 - INFO - Processing event type: user.deleted
+2025-04-02 01:51:55,537 - INFO - {
+  "timestamp": "2025-04-01T20:06:55.537769",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-02 01:51:55,538 - INFO - {
+  "timestamp": "2025-04-01T20:06:55.537988",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 01:51:55,538 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 02:25:31,081 - INFO - Processing event type: user.deleted
+2025-04-02 02:25:31,135 - INFO - {
+  "timestamp": "2025-04-01T20:40:31.135112",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "User not found: user_2uqC5seudvTkfQ2dMCuaT7BIR1a"
+}
+2025-04-02 02:25:31,135 - INFO - {
+  "timestamp": "2025-04-01T20:40:31.135823",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2uqC5seudvTkfQ2dMCuaT7BIR1a",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 02:25:31,135 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 09:22:24,568 - INFO - Processing event type: session.removed
+2025-04-02 09:22:24,569 - WARNING - Unhandled event type: session.removed
+2025-04-02 09:22:24,570 - INFO - {
+  "timestamp": "2025-04-02T03:37:24.569733",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746121924487,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743529924487,
+    "expire_at": 1744134724487,
+    "id": "sess_2v8c1F0VoEciyaKEsfseNaR2wme",
+    "last_active_at": 1743565016059,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743565044029,
+    "user_id": "user_2v8c1EUlDp6OTQ9Wa6YE4nLpmgB"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 09:22:29,821 - INFO - Processing event type: session.created
+2025-04-02 09:22:29,821 - WARNING - Unhandled event type: session.created
+2025-04-02 09:22:29,821 - INFO - {
+  "timestamp": "2025-04-02T03:37:29.821859",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746157049308,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743565049308,
+    "expire_at": 1744169849308,
+    "id": "sess_2v9lDIbRLdN39TJ9km1njOsGV0q",
+    "last_active_at": 1743565049308,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743565049342,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 12:16:48,814 - INFO - Processing event type: session.removed
+2025-04-02 12:16:48,819 - WARNING - Unhandled event type: session.removed
+2025-04-02 12:16:48,821 - INFO - {
+  "timestamp": "2025-04-02T06:31:48.819991",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746157049308,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743565049308,
+    "expire_at": 1744169849308,
+    "id": "sess_2v9lDIbRLdN39TJ9km1njOsGV0q",
+    "last_active_at": 1743575503013,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743575508067,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 12:18:16,627 - INFO - Processing event type: email.created
+2025-04-02 12:18:16,628 - WARNING - Unhandled event type: email.created
+2025-04-02 12:18:16,628 - INFO - {
+  "timestamp": "2025-04-02T06:33:16.628489",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>023081 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>023081</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2400:1a00:b040:c059:d9de:41ab:2092:41c2, Kathmandu, NP</b> at <b>02 April 2025, 06:33 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "023081 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 02 April 2025, 06:33 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "023081",
+      "requested_at": "02 April 2025, 06:33 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2400:1a00:b040:c059:d9de:41ab:2092:41c2, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": null,
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2vA6aZUkdZDWPk7hdBD7UKXmS2n",
+    "from_email_name": "notifications",
+    "id": "ema_2vA6aaygwV8v2ZnTHKQTzYGVN6q",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 023081 is your verification code",
+    "to_email_address": "educationkrischal07@gmail.com",
+    "user_id": null
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 12:18:33,672 - INFO - Processing event type: session.created
+2025-04-02 12:18:33,673 - WARNING - Unhandled event type: session.created
+2025-04-02 12:18:33,673 - INFO - {
+  "timestamp": "2025-04-02T06:33:33.673543",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746167613073,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743575613073,
+    "expire_at": 1744180413073,
+    "id": "sess_2vA6cud1W3nsVygHrUIhUM2MgmU",
+    "last_active_at": 1743575613073,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743575613103,
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 12:18:33,674 - INFO - Processing event type: user.created
+2025-04-02 12:18:33,840 - INFO - {
+  "timestamp": "2025-04-02T06:33:33.840757",
+  "event_type": "user.created",
+  "status": "success",
+  "data": {
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN",
+    "email": "educationkrischal07@gmail.com",
+    "username": null
+  }
+}
+2025-04-02 14:57:59,335 - INFO - Processing event type: session.removed
+2025-04-02 14:57:59,344 - WARNING - Unhandled event type: session.removed
+2025-04-02 14:57:59,349 - INFO - {
+  "timestamp": "2025-04-02T09:12:59.344744",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746167613073,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743575613073,
+    "expire_at": 1744180413073,
+    "id": "sess_2vA6cud1W3nsVygHrUIhUM2MgmU",
+    "last_active_at": 1743585171372,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743585178678,
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 14:58:07,353 - INFO - Processing event type: session.created
+2025-04-02 14:58:07,354 - WARNING - Unhandled event type: session.created
+2025-04-02 14:58:07,354 - INFO - {
+  "timestamp": "2025-04-02T09:13:07.354149",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746177186473,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743585186473,
+    "expire_at": 1744189986473,
+    "id": "sess_2vAQ1wVddV2K88xcMRyypxiV6gc",
+    "last_active_at": 1743585186473,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743585186503,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 15:02:51,335 - INFO - Processing event type: session.removed
+2025-04-02 15:02:51,336 - WARNING - Unhandled event type: session.removed
+2025-04-02 15:02:51,337 - INFO - {
+  "timestamp": "2025-04-02T09:17:51.336773",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746177186473,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743585186473,
+    "expire_at": 1744189986473,
+    "id": "sess_2vAQ1wVddV2K88xcMRyypxiV6gc",
+    "last_active_at": 1743585280157,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743585470822,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 15:04:17,928 - INFO - Processing event type: session.created
+2025-04-02 15:04:17,929 - WARNING - Unhandled event type: session.created
+2025-04-02 15:04:17,929 - INFO - {
+  "timestamp": "2025-04-02T09:19:17.929500",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746177557306,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743585557306,
+    "expire_at": 1744190357306,
+    "id": "sess_2vAQmTFkyTgXbkSbRVMVJki249k",
+    "last_active_at": 1743585557306,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743585557336,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 17:32:34,496 - INFO - Processing event type: session.removed
+2025-04-02 17:32:34,499 - WARNING - Unhandled event type: session.removed
+2025-04-02 17:32:34,500 - INFO - {
+  "timestamp": "2025-04-02T11:47:34.499606",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746177557306,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743585557306,
+    "expire_at": 1744190357306,
+    "id": "sess_2vAQmTFkyTgXbkSbRVMVJki249k",
+    "last_active_at": 1743594335936,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743594453980,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 17:34:17,891 - INFO - Processing event type: email.created
+2025-04-02 17:34:17,892 - WARNING - Unhandled event type: email.created
+2025-04-02 17:34:17,892 - INFO - {
+  "timestamp": "2025-04-02T11:49:17.892445",
+  "event_type": "email.created",
+  "status": "skipped",
+  "data": {
+    "body": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>772691 is your LitVerse verification code</title>\n        <style type=\"text/css\">\n            #outlook a {\n                padding: 0\n            }\n\n            .ExternalClass {\n                width: 100%\n            }\n\n            .ExternalClass,\n            .ExternalClass p,\n            .ExternalClass span,\n            .ExternalClass font,\n            .ExternalClass td,\n            .ExternalClass div {\n                line-height: 100%\n            }\n\n            body,\n            table,\n            td,\n            a {\n                -webkit-text-size-adjust: 100%;\n                -ms-text-size-adjust: 100%\n            }\n\n            table,\n            td {\n                mso-table-lspace: 0;\n                mso-table-rspace: 0\n            }\n\n            img {\n                -ms-interpolation-mode: bicubic\n            }\n\n            img {\n                border: 0;\n                outline: none;\n                text-decoration: none\n            }\n\n            a img {\n                border: none\n            }\n\n            td img {\n                vertical-align: top\n            }\n\n            table,\n            table td {\n                border-collapse: collapse\n            }\n\n            body {\n                margin: 0;\n                padding: 0;\n                width: 100% !important\n            }\n\n            .mobile-spacer {\n                width: 0;\n                display: none\n            }\n\n            @media all and (max-width:639px) {\n                .container {\n                    width: 100% !important;\n                    max-width: 600px !important\n                }\n\n                .mobile {\n                    width: auto !important;\n                    max-width: 100% !important;\n                    display: block !important\n                }\n\n                .mobile-center {\n                    text-align: center !important\n                }\n\n                .mobile-right {\n                    text-align: right !important\n                }\n\n                .mobile-left {\n                    text-align: left !important;\n                }\n\n                .mobile-hidden {\n                    max-height: 0;\n                    display: none !important;\n                    mso-hide: all;\n                    overflow: hidden\n                }\n\n                .mobile-spacer {\n                    width: auto !important;\n                    display: table !important\n                }\n\n                .mobile-image,\n                .mobile-image img {\n                    height: auto !important;\n                    max-width: 600px !important;\n                    width: 100% !important\n                }\n            }\n        </style>\n        <!--[if mso]><style type=\"text/css\">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->\n    </head>\n\n    <body style=\"font-family: Helvetica, Arial, sans-serif; margin: 0px; padding: 0px; background-color: #ffffff;\">\n        <span style=\"color: transparent; display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; visibility: hidden; width: 0px;\">Your LitVerse verification code</span>\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"body\" style=\"width: 100%;\">\n            <tbody>\n                <tr>\n                    <td align=\"center\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 48px 32px;\">\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"header container\" style=\"width: 600px;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" style=\"vertical-align: top; line-height: 1; padding: 16px 32px;\">\n                                        <p style=\"padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 24px; line-height: 36px;\">\n                                            LitVerse\n                                        </p>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"600\" class=\"main container\" style=\"width: 600px; border-collapse: separate;\">\n                            <tbody>\n                                <tr>\n                                    <td align=\"left\" valign=\"top\" bgcolor=\"#fff\" style=\"vertical-align: top; line-height: 1; background-color: #ffffff; border-radius: 0px;\">\n                                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" class=\"block\" style=\"width: 100%; border-collapse: separate;\">\n                                            <tbody>\n                                                <tr>\n                                                    <td align=\"left\" valign=\"top\" bgcolor=\"#ffffff\" style=\"vertical-align: top; line-height: 1; padding: 32px 32px 48px; background-color: #ffffff; border-radius: 0px;\">\n                                                        <h1 class=\"h1\" align=\"left\" style=\"padding: 0px; margin: 0px; font-style: normal; font-family: Helvetica, Arial, sans-serif; font-size: 32px; line-height: 39px; color: #000000; font-weight: bold;\"> Verification code </h1>\n                                                        <p align=\"left\" style=\"padding: 0px; margin: 32px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> Enter the following verification code when prompted: </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 40px; line-height: 60px;\">\n                                                            <b>772691</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> To protect your account, do not share this code. </p>\n                                                        <p style=\"padding: 0px; margin: 64px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\">\n                                                            <b>Didn't request this?</b>\n                                                        </p>\n                                                        <p style=\"padding: 0px; margin: 4px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; line-height: 21px;\"> This code was requested from <b>2400:1a00:b040:fbdf:3946:596a:13b:8a30, Kathmandu, NP</b> at <b>02 April 2025, 11:49 UTC</b>. If you didn't make this request, you can safely ignore this email. </p>\n                                                    </td>\n                                                </tr>\n                                            </tbody>\n                                        </table>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </body>\n\n</html>",
+    "body_plain": "772691 is your OTP code for LitVerse.\n\nDo not share this with anyone.\n\nIt was requested at 02 April 2025, 11:49 UTC. If you did not request this, please ignore this email.\n",
+    "data": {
+      "app": {
+        "domain_name": "guiding.ferret-43.lcl.dev",
+        "logo_image_url": "",
+        "logo_url": null,
+        "name": "LitVerse",
+        "url": "https://guiding-ferret-43.accounts.dev"
+      },
+      "otp_code": "772691",
+      "requested_at": "02 April 2025, 11:49 UTC",
+      "requested_by": "Firefox, Macintosh",
+      "requested_from": "2400:1a00:b040:fbdf:3946:596a:13b:8a30, Kathmandu, NP",
+      "theme": {
+        "button_text_color": "#ffffff",
+        "primary_color": "#6c47ff",
+        "show_clerk_branding": true
+      },
+      "user": {
+        "public_metadata": {},
+        "public_metadata_fallback": ""
+      }
+    },
+    "delivered_by_clerk": true,
+    "email_address_id": "idn_2vA6aZUkdZDWPk7hdBD7UKXmS2n",
+    "from_email_name": "notifications",
+    "id": "ema_2vAj1YP8cxd40v9X0TvRvG01Jxf",
+    "object": "email",
+    "reply_to_email_name": null,
+    "slug": "verification_code",
+    "status": "queued",
+    "subject": "[Development] 772691 is your verification code",
+    "to_email_address": "educationkrischal07@gmail.com",
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 17:34:33,367 - INFO - Processing event type: session.created
+2025-04-02 17:34:33,367 - WARNING - Unhandled event type: session.created
+2025-04-02 17:34:33,368 - INFO - {
+  "timestamp": "2025-04-02T11:49:33.368044",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746186572846,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743594572846,
+    "expire_at": 1744199372846,
+    "id": "sess_2vAj3R2SJ3mQLeJ09OB7FaAKINY",
+    "last_active_at": 1743594572846,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743594572871,
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 17:46:12,499 - INFO - Processing event type: user.deleted
+2025-04-02 17:46:12,570 - INFO - {
+  "timestamp": "2025-04-02T12:01:12.570660",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8RTnp4dmX82haC1twwgdfdO4p"
+}
+2025-04-02 17:46:12,571 - INFO - {
+  "timestamp": "2025-04-02T12:01:12.571764",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8RTnp4dmX82haC1twwgdfdO4p",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 17:46:12,571 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 17:59:08,511 - INFO - Processing event type: user.deleted
+2025-04-02 17:59:08,516 - INFO - {
+  "timestamp": "2025-04-02T12:14:08.516558",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "User not found: user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn"
+}
+2025-04-02 17:59:08,516 - INFO - {
+  "timestamp": "2025-04-02T12:14:08.516951",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2v8aEEMXX3xV3Qqrl6jAU4hc3Vn",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 17:59:08,517 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 18:00:15,515 - INFO - Processing event type: user.deleted
+2025-04-02 18:00:15,533 - INFO - {
+  "timestamp": "2025-04-02T12:15:15.533293",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "User not found: user_2tFztUT3H6f6dwoEKA2jcsQMJVZ"
+}
+2025-04-02 18:00:15,533 - INFO - {
+  "timestamp": "2025-04-02T12:15:15.533484",
+  "event_type": "user.deleted",
+  "status": "error",
+  "data": {
+    "deleted": true,
+    "id": "user_2tFztUT3H6f6dwoEKA2jcsQMJVZ",
+    "object": "user"
+  },
+  "error": "404: User not found"
+}
+2025-04-02 18:00:15,533 - ERROR - Unhandled exception in webhook handler: 404: User not found
+Traceback (most recent call last):
+  File "/Users/anjanapakhrin/Downloads/LitVerse/backend/routes/webhooks.py", line 232, in handle_webhook
+    raise HTTPException(status_code=404, detail="User not found")
+fastapi.exceptions.HTTPException: 404: User not found
+2025-04-02 18:37:01,414 - INFO - Processing event type: session.removed
+2025-04-02 18:37:01,416 - WARNING - Unhandled event type: session.removed
+2025-04-02 18:37:01,417 - INFO - {
+  "timestamp": "2025-04-02T12:52:01.416794",
+  "event_type": "session.removed",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746186572846,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743594572846,
+    "expire_at": 1744199372846,
+    "id": "sess_2vAj3R2SJ3mQLeJ09OB7FaAKINY",
+    "last_active_at": 1743598312873,
+    "object": "session",
+    "status": "removed",
+    "updated_at": 1743598321022,
+    "user_id": "user_2vA6crf8YxSYApUrJGPCQ8uFAgN"
+  },
+  "error": "Unhandled event type"
+}
+2025-04-02 18:37:06,700 - INFO - Processing event type: session.created
+2025-04-02 18:37:06,700 - WARNING - Unhandled event type: session.created
+2025-04-02 18:37:06,700 - INFO - {
+  "timestamp": "2025-04-02T12:52:06.700379",
+  "event_type": "session.created",
+  "status": "skipped",
+  "data": {
+    "abandon_at": 1746190326251,
+    "actor": null,
+    "client_id": "client_2v8ZockXJtgtH5SjOeReAv26Wjz",
+    "created_at": 1743598326251,
+    "expire_at": 1744203126251,
+    "id": "sess_2vAqf6IUBIEq28Pjzjz6mmq03nU",
+    "last_active_at": 1743598326251,
+    "object": "session",
+    "status": "active",
+    "updated_at": 1743598326275,
+    "user_id": "user_2v8aqZOZ6UlKcyx6hLOXOMzb4Iy"
+  },
+  "error": "Unhandled event type"
+}

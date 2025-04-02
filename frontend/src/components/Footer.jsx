@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Explore</h4>
             <ul className="space-y-2">
-              {["bestsellers", "genres", "recommendations", "ai-search"].map((item) => (
+              {["genres", "recommendations", "ai-search"].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item}`}

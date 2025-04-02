@@ -305,7 +305,7 @@ const SearchResults = () => {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
 
-      <div className="p-6 max-w-6xl mx-auto">
+      <div className="py-20 max-w-6xl mx-auto ">
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="flex justify-center mb-6">
           <div className="relative w-full max-w-2xl">

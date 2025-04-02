@@ -7,3 +7,4 @@ alembic
 svix
 pydantic
 pydantic-settings
+clerk-backend-api

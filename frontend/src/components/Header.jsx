@@ -20,18 +20,19 @@ const Header = () => {
 
       {/* Center Navbar Links */}
       <div className="hidden md:flex space-x-8 text-silver text-lg font-semibold">
-        <Link 
-          to="/bestsellers" 
-          className="hover:text-[#865DFF] transition-colors duration-300"
-        >
-          Best Sellers
-        </Link>
-        <Link 
+      <Link 
           to="/genres" 
           className="hover:text-[#865DFF] transition-colors duration-300"
         >
           Genres
         </Link>
+        <Link 
+          to="/book-tracker" 
+          className="hover:text-[#865DFF] text-bubble-gum transition-colors duration-300"
+        >
+          My Booklist
+        </Link>
+       
         <Link 
           to="/recommendations" 
           className="hover:text-[#865DFF] transition-colors duration-300"
